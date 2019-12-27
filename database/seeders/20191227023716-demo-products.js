@@ -12,7 +12,7 @@ module.exports = {
             isBetaMember: false
           }], {});
         */
-        return queryInterface.bulkInsert('Products', [
+        return queryInterface.bulkInsert('products', [
             {
                 name: 'Lego Creator: Underwater Robot',
                 price: '19.99',
@@ -45,6 +45,6 @@ module.exports = {
           Example:
           return queryInterface.bulkDelete('People', null, {});
         */
-        return queryInterface.bulkDelete('Products', null, {});
+        return queryInterface.bulkDelete('products', null, {});
     }
 };

@@ -1,2 +1,6 @@
 
 node_modules/
+
+database/development.sqlite
+database/test.sqlite
+database/production.sqlite
