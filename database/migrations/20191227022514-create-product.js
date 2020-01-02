@@ -10,13 +10,13 @@ module.exports = {
       },
       name: {
         allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING(250)
       },
       price: {
-        type: Sequelize.NUMBER
+        type: Sequelize.FLOAT
       },
       description: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(10000)
       },
       createdAt: {
         allowNull: false,
