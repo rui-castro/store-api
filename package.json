@@ -1,21 +1,26 @@
 {
-  "name": "store.js",
+  "name": "store-api",
   "version": "0.1.0",
-  "description": "Store Backend",
+  "description": "Store API",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "migrate": "npx sequelize-cli db:migrate",
+    "migrate:reset": "npx sequelize-cli db:migrate:undo:all && npm run migrate",
+    "test": "cross-env NODE_ENV=test jest --testTimeout=10000",
+    "test:watch": "cross-env NODE_ENV=test jest --watch",
+    "pretest": "cross-env NODE_ENV=test npm run migrate:reset"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rui-castro/store.js.git"
+    "url": "git+https://github.com/rui-castro/store-api.git"
   },
   "author": "Rui Castro",
-  "license": "ISC",
+  "license": "Proprietary",
   "bugs": {
-    "url": "https://github.com/rui-castro/store.js/issues"
+    "url": "https://github.com/rui-castro/store-api/issues"
   },
-  "homepage": "https://github.com/rui-castro/store.js#readme",
+  "homepage": "https://github.com/rui-castro/store-api#readme",
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
@@ -25,6 +30,9 @@
     "sqlite3": "^4.1.1"
   },
   "devDependencies": {
-    "sequelize-cli": "^5.5.1"
+    "cross-env": "^6.0.3",
+    "jest": "^24.9.0",
+    "sequelize-cli": "^5.5.1",
+    "supertest": "^4.0.2"
   }
 }
