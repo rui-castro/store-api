@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "migrate": "npx sequelize-cli db:migrate",
-    "migrate:reset": "npx sequelize-cli db:migrate:undo:all && npm run migrate",
+    "migrate:reset": "npx sequelize-cli db:migrate:undo:all && npm run migrate && npm run seed",
+    "seed": "npx sequelize-cli db:seed:all",
     "test": "cross-env NODE_ENV=test jest --testTimeout=10000",
     "test:watch": "cross-env NODE_ENV=test jest --watch",
     "pretest": "cross-env NODE_ENV=test npm run migrate:reset"
